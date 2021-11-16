@@ -18,6 +18,7 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   let moviesFromDirector = array.filter(movie => movie.director === director);
   let result = moviesFromDirector.reduce((previousMovie, currentMovie) => previousMovie.score + currentMovie.score)/(moviesFromDirector.length).toFixed(2);
+  console.log("EXERCICE 3 ->", result);
 
   return result;
 }
@@ -25,7 +26,8 @@ function moviesAverageOfDirector(array, director) {
 // Exercise 4:  Alphabetic order by title
 function orderAlphabetically(array) {
   let result = array.map(movie => movie.title);
-  const order = result.sort((a, b) => a > b ? 1 : -1).slice(0, 20);
+  const order = result.sort((a, b) => a.title > b.title ? 1 : -1).slice(0, 20);
+  console.log("EXERCICE 4 ->", result = order);
 
   return result = order;
 }
@@ -40,6 +42,7 @@ function orderByYear(array) {
     return a.year - b.year
   });
   let result = [...ordered];
+  console.log("EXERCICE 4 ->", result);
 
   return result;
 }
@@ -52,6 +55,7 @@ function moviesAverageByCategory(array, category) {
   if (moviesCategory.length.toFixed(2) > 1) {
     return result;
   }
+  console.log("EXERCICE 6 ->", moviesCategory[0].score);
 
   return moviesCategory[0].score;
 }
@@ -73,6 +77,7 @@ function hoursToMinutes(array) {
       movie.duration = minutes;
       result.push(movie);
   })
+  console.log("EXERCICE 7 ->", result);
 
   return result;
 }
@@ -81,6 +86,7 @@ function hoursToMinutes(array) {
 function bestFilmOfYear(array, year) {
   let result = array.filter(movie => movie.year === year);
   let bestFilmYear = result.sort((a, b) => b.score - a.score).slice(0, 1);
+  console.log("EXERCICE 8 ->", result = bestFilmYear);
 
   return result = bestFilmYear;
 }
